@@ -96,7 +96,7 @@ public class Job {
     public String toString(){
         return "\n"
                 + "ID: " + this.getId() + "\n"
-                + "Name: " + this.getName() + "\n"
+                + "Name: " + this.getName() == null ? "Data not available" : this.getName() + "\n"
                 + "Employer: " + this.getEmployer().getValue() + "\n"
                 + "Location: " + this.getLocation().getValue() + "\n"
                 + "Position Type: " + this.getPositionType().getValue() + "\n"
