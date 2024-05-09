@@ -40,4 +40,19 @@ public class JobTest {
         assertTrue(stringJob.startsWith(System.lineSeparator()));
         assertTrue(stringJob.endsWith(System.lineSeparator()));
     }
+    @Test
+    public void testToStringContainsCorrectLabelsAndData(){
+        Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        String stringJob = job.toString();
+        String expected =
+                "\n"
+                + "ID: " + job.getId() + "\n"
+                + "Name: " + job.getName() + "\n"
+                + "Employer: " + job.getEmployer().getValue() + "\n"
+                + "Location: " + job.getLocation().getValue() + "\n"
+                + "Position Type: " + job.getPositionType().getValue() + "\n"
+                + "Core Competency: " + job.getCoreCompetency().getValue() +
+                "\n";
+        assertEquals(expected, stringJob);
+    }
 }
