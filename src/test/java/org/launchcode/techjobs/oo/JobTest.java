@@ -49,14 +49,14 @@ public class JobTest {
         Job job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
         String stringJob = job.toString();
         String expected =
-                "\n"
-                        + "ID: " + job.getId() + "\n"
-                        + "Name: " + job.getName() + "\n"
-                        + "Employer: " + job.getEmployer().getValue() + "\n"
-                        + "Location: " + job.getLocation().getValue() + "\n"
-                        + "Position Type: " + job.getPositionType().getValue() + "\n"
+                System.lineSeparator()
+                        + "ID: " + job.getId() + System.lineSeparator()
+                        + "Name: " + job.getName() + System.lineSeparator()
+                        + "Employer: " + job.getEmployer().getValue() + System.lineSeparator()
+                        + "Location: " + job.getLocation().getValue() + System.lineSeparator()
+                        + "Position Type: " + job.getPositionType().getValue() + System.lineSeparator()
                         + "Core Competency: " + job.getCoreCompetency().getValue() +
-                        "\n";
+                        System.lineSeparator();
         assertEquals(expected, stringJob);
     }
 
@@ -65,13 +65,13 @@ public class JobTest {
         Job job = new Job("Product tester", new Employer("ACME"), new Location(""), new PositionType("Quality control"), new CoreCompetency(""));
         String stringJob = job.toString();
         String expected =
-                "\n"
-                + "ID: " + job.getId() + "\n"
-                + "Name: " + job.getName() + "\n"
-                + "Employer: " + job.getEmployer().getValue() + "\n"
-                + "Location: " + "Data not available" + "\n"
-                + "Position Type: " + job.getPositionType().getValue() + "\n"
+                System.lineSeparator()
+                + "ID: " + job.getId() + System.lineSeparator()
+                + "Name: " + job.getName() + System.lineSeparator()
+                + "Employer: " + job.getEmployer().getValue() + System.lineSeparator()
+                + "Location: " + "Data not available" + System.lineSeparator()
+                + "Position Type: " + job.getPositionType().getValue() + System.lineSeparator()
                 + "Core Competency: " + "Data is not available" +
-                "\n";
+                System.lineSeparator();
     }
 }

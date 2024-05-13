@@ -94,13 +94,13 @@ public class Job {
     }
 
     public String toString(){
-        return "\n"
-                + "ID: " + this.getId() + "\n"
-                + "Name: " + this.getName() == null ? "Data not available" : this.getName() + "\n"
-                + "Employer: " + this.getEmployer().getValue() + "\n"
-                + "Location: " + this.getLocation().getValue() + "\n"
-                + "Position Type: " + this.getPositionType().getValue() + "\n"
-                + "Core Competency: " + this.getCoreCompetency().getValue() +
-                "\n";
+        return System.lineSeparator()
+                + "ID: " + this.getId() + System.lineSeparator()
+                + "Name: " + ((this.getName() == null ? "Data not available" : this.getName())) + System.lineSeparator()
+                + "Employer: " + ((this.getEmployer() == null || this.getEmployer().getValue().isBlank()) ? "Data not available" : this.getEmployer()) + System.lineSeparator()
+                + "Location: " + ((this.getLocation() == null || this.getLocation().getValue().isBlank()) ? "Data not available" : this.getLocation()) + System.lineSeparator()
+                + "Position Type: " + ((this.getPositionType() == null || this.getPositionType().getValue().isBlank()) ? "Data not available" : this.getPositionType()) + System.lineSeparator()
+                + "Core Competency: " + ((this.getCoreCompetency() == null || this.getCoreCompetency().getValue().isBlank()) ? "Data not available" : this.getCoreCompetency()) +
+                System.lineSeparator();
     }
 }
